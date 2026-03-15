@@ -1,0 +1,48 @@
+.wrapper {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Dark variant: black bg, cream text */
+.dark {
+  background: var(--color-text);
+}
+
+.dark .text {
+  color: var(--color-bg);
+}
+
+/* Light variant: cream bg, dark text */
+.light {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-light-grey);
+  border-bottom: 1px solid var(--color-light-grey);
+}
+
+.light .text {
+  color: var(--color-text);
+}
+
+/* Accent variant: yellow bg, dark text */
+.accent {
+  background: var(--color-accent);
+}
+
+.accent .text {
+  color: var(--color-text);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+}
