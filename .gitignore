@@ -1,5 +1,11 @@
 node_modules
+.env
+.env.local
 dist
 public/images/1_ANATOMIC_DENIM_EVENT_FINAL_9X16_25FPS.mp4
 public/images/vliegtuig V2.mp4
 public/images/Tim Teaser V2.MP4
+
+.vercel
+
+.vercel

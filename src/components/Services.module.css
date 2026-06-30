@@ -37,7 +37,7 @@
   background: var(--color-white);
   transition: transform 0.4s ease, background 0.4s ease;
   position: relative;
-  cursor: default;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='30' viewBox='-1 -1 22 30'><path d='M1 1 L1 21 L6 16 L11 25 L14 23.5 L9 14.5 L16 13 Z' fill='%237CA2E0' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round'/></svg>") 2 2, auto;
 }
 
 .card:hover {

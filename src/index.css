@@ -34,6 +34,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='30' viewBox='-1 -1 22 30'><path d='M1 1 L1 21 L6 16 L11 25 L14 23.5 L9 14.5 L16 13 Z' fill='%237CA2E0' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round'/></svg>") 2 2, auto;
 }
 
 body {
@@ -49,11 +50,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='22' viewBox='0 0 32 32'><path d='M10 2c-1.1 0-2 .9-2 2v12.3L6.5 14.8c-.8-.8-2-.8-2.8 0-.8.8-.8 2 0 2.8l6.1 7.5C11.5 27 14 28 16.6 28H18c4.4 0 8-3.6 8-8V11c0-1.1-.9-2-2-2s-2 .9-2 2v-1c0-1.1-.9-2-2-2s-2 .9-2 2V9c0-1.1-.9-2-2-2s-2 .9-2 2V4c0-1.1-.9-2-2-2z' fill='%23FEFEA9' stroke='%231a1a1a' stroke-width='1.5' stroke-linejoin='round'/></svg>") 7 0, pointer;
 }
 
 button {
   font-family: inherit;
-  cursor: pointer;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='22' viewBox='0 0 32 32'><path d='M10 2c-1.1 0-2 .9-2 2v12.3L6.5 14.8c-.8-.8-2-.8-2.8 0-.8.8-.8 2 0 2.8l6.1 7.5C11.5 27 14 28 16.6 28H18c4.4 0 8-3.6 8-8V11c0-1.1-.9-2-2-2s-2 .9-2 2v-1c0-1.1-.9-2-2-2s-2 .9-2 2V9c0-1.1-.9-2-2-2s-2 .9-2 2V4c0-1.1-.9-2-2-2z' fill='%23FEFEA9' stroke='%231a1a1a' stroke-width='1.5' stroke-linejoin='round'/></svg>") 7 0, pointer;
   border: none;
   background: none;
 }
@@ -71,6 +73,7 @@ ul, ol {
 input, textarea {
   font-family: inherit;
   font-size: inherit;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='30' viewBox='-1 -1 22 30'><path d='M1 1 L1 21 L6 16 L11 25 L14 23.5 L9 14.5 L16 13 Z' fill='%237CA2E0' stroke='%23FEFEA9' stroke-width='2' stroke-linejoin='round'/></svg>") 2 2, text;
 }
 
 ::selection {

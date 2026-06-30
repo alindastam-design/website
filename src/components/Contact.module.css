@@ -90,6 +90,7 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='30' viewBox='-1 -1 22 30'><path d='M1 1 L1 21 L6 16 L11 25 L14 23.5 L9 14.5 L16 13 Z' fill='%237CA2E0' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round'/></svg>") 2 2, auto;
 }
 
 .input,
@@ -125,9 +126,28 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.submit:hover {
+.submit:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(124, 162, 224, 0.35);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.feedback {
+  font-size: 0.9rem;
+  color: var(--color-grey);
+  line-height: 1.5;
+}
+
+.feedbackError {
+  color: #c0392b;
+}
+
+.feedbackError a {
+  text-decoration: underline;
 }
 
 @media (max-width: 900px) {

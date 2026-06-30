@@ -1,0 +1,19 @@
+.quote {
+  background: var(--color-blue);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.text {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  color: var(--color-accent);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}

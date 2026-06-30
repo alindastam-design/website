@@ -1,0 +1,178 @@
+.section {
+  padding: var(--section-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-grey);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.title em {
+  font-style: italic;
+}
+
+/* ── Grid ── */
+.wrapper {
+  overflow-x: auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--cell-size, 44px));
+  grid-template-rows: repeat(var(--rows), var(--cell-size, 44px));
+  gap: 3px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.gridVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Cellen ── */
+.cell {
+  width: var(--cell-size, 44px);
+  height: var(--cell-size, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: background-color 0.5s ease, opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.filled {
+  background-color: var(--color-text);
+}
+
+.letter {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 2vw, 1.15rem);
+  font-weight: 400;
+  color: var(--color-bg);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  user-select: none;
+  transition: color 0.5s ease;
+}
+
+/* Doorgestreept woord — vervaagd */
+.crossed {
+  opacity: 0.25;
+}
+
+/* Boodschap-letter — onthulling */
+.messageCell {
+  background-color: var(--color-accent);
+  transform: scale(1.1);
+  box-shadow: 0 0 16px rgba(254, 254, 169, 0.5);
+}
+
+.messageCell .letter {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ── Doorstreep-lijnen ── */
+.strike {
+  position: relative;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.strikeH::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background-color: #d32f2f;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  animation: drawH 0.45s ease forwards;
+  border-radius: 2px;
+}
+
+.strikeV::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2.5px;
+  background-color: #d32f2f;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top center;
+  animation: drawV 0.45s ease forwards;
+  border-radius: 2px;
+}
+
+@keyframes drawH {
+  to { transform: translateY(-50%) scaleX(1); }
+}
+
+@keyframes drawV {
+  to { transform: translateX(-50%) scaleY(1); }
+}
+
+/* ── Onthullingstekst ── */
+.reveal {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Mobiel ── */
+@media (max-width: 600px) {
+  .section {
+    padding: var(--section-padding-mobile);
+    gap: 40px;
+  }
+
+  .grid {
+    --cell-size: 26px;
+    gap: 2px;
+  }
+
+  .letter {
+    font-size: 0.7rem;
+  }
+}

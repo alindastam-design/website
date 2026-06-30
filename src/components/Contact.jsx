@@ -4,6 +4,7 @@ import styles from './Contact.module.css'
 export default function Contact() {
   const sectionRef = useRef(null)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,11 +15,21 @@ export default function Contact() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Contact via portfolio — ${form.name}`)
-    const body = encodeURIComponent(`Naam: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
-    window.location.href = `mailto:hello@alindastam.nl?subject=${subject}&body=${body}`
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
+      setStatus('success')
+      setForm({ name: '', email: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   const handleChange = (e) => {
@@ -91,9 +102,25 @@ export default function Contact() {
               placeholder="Vertel me over je project..."
             />
           </div>
-          <button type="submit" className={styles.submit}>
-            Verstuur bericht
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={status === 'loading' || status === 'success'}
+          >
+            {status === 'loading' ? 'Versturen…' : status === 'success' ? 'Verstuurd!' : 'Verstuur bericht'}
           </button>
+
+          {status === 'success' && (
+            <p className={styles.feedback}>
+              Bedankt! Je bericht is verstuurd. Ik neem snel contact op.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className={`${styles.feedback} ${styles.feedbackError}`}>
+              Er ging iets mis. Probeer het opnieuw of mail direct naar{' '}
+              <a href="mailto:hello@alindastam.nl">hello@alindastam.nl</a>.
+            </p>
+          )}
         </form>
       </div>
     </section>

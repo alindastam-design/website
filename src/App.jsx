@@ -5,7 +5,7 @@ import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import Reviews from './components/Reviews'
 import Contact from './components/Contact'
-import LinkedIn from './components/LinkedIn'
+import Crossword from './components/Crossword'
 import Footer from './components/Footer'
 import styles from './App.module.css'
 
@@ -15,11 +15,11 @@ export default function App() {
       <Navbar />
       <Hero />
       <Portfolio />
+{/* <Crossword /> */}
       <About />
       <Services />
-      {/* <Reviews /> */}
+{/* <Reviews /> */}
       <Contact />
-      <LinkedIn />
       <Footer />
     </div>
   )

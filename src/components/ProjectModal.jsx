@@ -33,7 +33,11 @@ export default function ProjectModal({ project, onClose }) {
               playsInline
             />
           ) : (
-            <img src={item.src} alt={project.title} className={styles.projectImg} />
+            <img
+              src={item.src}
+              alt={project.title}
+              className={`${styles.projectImg} ${project.fit === 'contain' ? styles.projectImgContain : ''}`}
+            />
           )}
 
           {hasCarousel && (
@@ -64,7 +68,13 @@ export default function ProjectModal({ project, onClose }) {
     }
 
     if (project.image) {
-      return <img src={project.image} alt={project.title} className={styles.projectImg} />
+      return (
+        <img
+          src={project.image}
+          alt={project.title}
+          className={`${styles.projectImg} ${project.fit === 'contain' ? styles.projectImgContain : ''}`}
+        />
+      )
     }
 
     return (
@@ -86,6 +96,10 @@ export default function ProjectModal({ project, onClose }) {
         <div className={styles.content}>
           <span className={styles.category}>{project.title}</span>
           <p className={styles.desc}>{project.description}</p>
+
+          {project.photoCredits && (
+            <p className={styles.photoCredits}>{project.photoCredits}</p>
+          )}
 
           {project.results && (
             <div className={styles.results}>
