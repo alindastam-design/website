@@ -161,3 +161,15 @@
     padding: 0 24px;
   }
 }
+
+/* Honeypot-veld tegen spam: buiten beeld, niet display:none (bots checken dat) */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}

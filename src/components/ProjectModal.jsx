@@ -29,6 +29,8 @@ export default function ProjectModal({ project, onClose }) {
               key={item.src}
               src={item.src}
               className={styles.projectVideo}
+              poster={item.poster}
+              preload="none"
               controls
               playsInline
             />

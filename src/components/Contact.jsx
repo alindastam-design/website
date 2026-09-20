@@ -3,7 +3,8 @@ import styles from './Contact.module.css'
 
 export default function Contact() {
   const sectionRef = useRef(null)
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', message: '', website: '' })
+  const startedAt = useRef(Date.now())
   const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
 
   useEffect(() => {
@@ -22,11 +23,11 @@ export default function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, startedAt: startedAt.current }),
       })
       if (!res.ok) throw new Error()
       setStatus('success')
-      setForm({ name: '', email: '', message: '' })
+      setForm({ name: '', email: '', message: '', website: '' })
     } catch {
       setStatus('error')
     }
@@ -63,6 +64,19 @@ export default function Contact() {
         </div>
 
         <form className={`${styles.form} fade-in`} onSubmit={handleSubmit}>
+          {/* Honeypot: onzichtbaar voor mensen, bots vullen dit in */}
+          <div className={styles.honeypot} aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={form.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
           <div className={styles.field}>
             <label htmlFor="name" className={styles.fieldLabel}>Naam</label>
             <input

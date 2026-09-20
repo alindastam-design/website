@@ -17,7 +17,7 @@ export default function About() {
     <section id="over-mij" className={styles.about} ref={sectionRef}>
       <div className={styles.content}>
         <div className={`${styles.imageCol} fade-in`}>
-          <img src="/images/alinda-profiel.jpg" alt="Alinda Stam" className={styles.profileImg} />
+          <img src="/images/alinda-profiel.webp" alt="Alinda Stam" className={styles.profileImg} />
         </div>
 
         <div className={`${styles.textCol} fade-in`}>
