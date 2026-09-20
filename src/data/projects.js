@@ -130,7 +130,12 @@ const projects = [
     category: 'Hante Creative Agency',
     image: '/images/hante/hante-cover.webp',
     media: [
-      { type: 'image', src: '/images/hante/char-1.webp' },
+      { type: 'image', src: '/images/hante/char-lancering.webp' },
+      { type: 'image', src: '/images/hante/char-activatie.webp' },
+      { type: 'image', src: '/images/hante/boeklancering-1.webp' },
+      { type: 'image', src: '/images/hante/boeklancering-2.webp' },
+      { type: 'video', src: '/images/hante/char-amsterdamse-zomer.mp4', poster: '/images/hante/char-amsterdamse-zomer-poster.webp' },
+      { type: 'video', src: '/images/hante/boeklancering-paqualand.mp4', poster: '/images/hante/boeklancering-paqualand-poster.webp' },
     ],
     description: 'Hante Creative Agency is het creatieve bureau van Hante Anema. Voor Hante verzorgde ik de eventproductie van merk- en boeklanceringen: van de lancering en zomeractivatie van CHAR beauty tot de boeklancering van Thomas, Rutger & Paco de hond.',
     results: [
