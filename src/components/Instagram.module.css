@@ -56,14 +56,23 @@
   color: var(--color-white);
 }
 
+.posts {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 32px;
+}
+
 .postCard {
   border-radius: 12px;
   background: var(--color-white);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  width: 400px;
-  max-width: 100%;
-  flex-shrink: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 400px;
   container-type: inline-size;
 }
 
@@ -72,12 +81,17 @@
   display: block;
   border: none;
   width: 100%;
-  height: calc(100cqw * var(--post-aspect, 1.25) + 212px);
+  height: calc(100cqw * var(--post-aspect, 1.25) + var(--post-chrome, 212px));
 }
 
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
+  }
+
+  .posts {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
@@ -90,7 +104,13 @@
     padding: 0 24px;
   }
 
+  .posts {
+    flex-direction: column;
+  }
+
   .postCard {
+    flex: none;
     width: 100%;
+    max-width: none;
   }
 }

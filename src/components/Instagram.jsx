@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import styles from './Instagram.module.css'
-import instagramPost from '../data/instagramPost'
+import instagram from '../data/instagramPost'
 
 export default function Instagram() {
   const sectionRef = useRef(null)
@@ -14,32 +14,34 @@ export default function Instagram() {
     return () => observer.disconnect()
   }, [])
 
-  const embedSrc = `${instagramPost.url.split('?')[0].replace(/\/?$/, '/')}embed`
-
   return (
     <section className={styles.instagram} ref={sectionRef}>
       <div className={styles.container}>
         <div className={styles.left}>
           <p className={`${styles.label} fade-in`}>Instagram</p>
-          <h2 className={`${styles.title} fade-in`}>Laatste <em>post</em></h2>
+          <h2 className={`${styles.title} fade-in`}>Volg <em>mij</em></h2>
           <a
-            href={instagramPost.profile}
+            href={instagram.profile}
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.follow} fade-in`}
           >
-            Volg {instagramPost.handle}
+            {instagram.handle}
           </a>
         </div>
-        <div className={`${styles.postCard} fade-in`} style={{ '--post-aspect': instagramPost.aspect }}>
-          <iframe
-            src={embedSrc}
-            loading="lazy"
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen
-            title={`Instagram-post van ${instagramPost.handle}`}
-          />
+        <div className={styles.posts}>
+          {instagram.posts.map((post) => (
+            <div key={post.url} className={`${styles.postCard} fade-in`} style={{ '--post-aspect': post.aspect, '--post-chrome': post.hideLikes ? '188px' : '212px' }}>
+              <iframe
+                src={`${post.url.split('?')[0].replace(/\/?$/, '/')}embed`}
+                loading="lazy"
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen
+                title={`Instagram-post van ${instagram.handle}`}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
