@@ -4,6 +4,7 @@ import About from './components/About'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import Reviews from './components/Reviews'
+import Instagram from './components/Instagram'
 import Contact from './components/Contact'
 import Crossword from './components/Crossword'
 import Footer from './components/Footer'
@@ -19,6 +20,7 @@ export default function App() {
       <About />
       <Services />
 {/* <Reviews /> */}
+      <Instagram />
       <Contact />
       <Footer />
     </div>

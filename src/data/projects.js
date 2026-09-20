@@ -119,9 +119,24 @@ const projects = [
     ],
     description: 'Amsterdams PR-, marketing- en eventproductiebureau van Lize Booij. We helpen merken naar een volgend niveau via een uitgebreid netwerk en sterke expertise in het bouwen, uitvoeren en versterken van merkbekendheid.',
     results: [
-      'Ondersteuning eventproductie nightshop | Cosmopolitan Club House',
+      'Ondersteuning eventproductie nightshop ADE x Cosmopolitan Club House',
       'Ondersteuning evenproductie | Heineken x Filling Pieces',
       'Eventproductie voor More Nutrition \'All you can cheat\'',
+    ],
+  },
+  {
+    id: 7,
+    title: 'Hante Creative Agency',
+    category: 'Hante Creative Agency',
+    image: '/images/hante/hante-cover.webp',
+    media: [
+      { type: 'image', src: '/images/hante/char-1.webp' },
+    ],
+    description: 'Hante Creative Agency is het creatieve bureau van Hante Anema. Voor Hante verzorgde ik de eventproductie van merk- en boeklanceringen: van de lancering en zomeractivatie van CHAR beauty tot de boeklancering van Thomas, Rutger & Paco de hond.',
+    results: [
+      'Eventproductie CHAR beauty lancering',
+      'Eventproductie CHAR beauty activatie Amsterdamse Zomer',
+      'Eventproductie boeklancering Thomas, Rutger & Paco de hond & het waterpark',
     ],
   },
 ]

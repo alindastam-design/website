@@ -1,0 +1,96 @@
+.instagram {
+  background: var(--color-bg);
+  padding: var(--section-padding);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.left {
+  flex-shrink: 0;
+  min-width: 200px;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: var(--color-blue);
+  margin-bottom: 28px;
+  line-height: 1.1;
+}
+
+.title em {
+  font-style: italic;
+}
+
+.follow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background: var(--color-accent);
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.follow:hover {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.postCard {
+  border-radius: 12px;
+  background: var(--color-white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+  flex-shrink: 0;
+  container-type: inline-size;
+}
+
+/* Hoogte = beeld (breedte × verhouding van de post) + vaste kop en voet van de Instagram-embed */
+.postCard iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  height: calc(100cqw * var(--post-aspect, 1.25) + 212px);
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .instagram {
+    padding: var(--section-padding-mobile);
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .postCard {
+    width: 100%;
+  }
+}
